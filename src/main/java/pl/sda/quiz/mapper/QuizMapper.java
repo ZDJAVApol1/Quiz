@@ -10,10 +10,15 @@ import pl.sda.quiz.entity.Quiz;
 public class QuizMapper {
 
     public static QuizDto mapEntityToDto(Quiz entity) {
-        return new QuizDto(
+        QuizDto dto = new QuizDto(
+            entity.getId(),
             entity.getTitle(), 
             entity.getDescription(), 
             new SimpleDateFormat("EEE, MMM d, ''yy").format(entity.getCreateDate()));
+
+        // dto.setQuestions(QuestionMapper.mapEntityListToDtoList(entity.getQuestions()));
+
+        return dto;
     }
 
     public static List<QuizDto> mapEnitityListToDtoList(Iterable<Quiz> entities) {

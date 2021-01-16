@@ -1,11 +1,13 @@
 package pl.sda.quiz.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,6 +24,9 @@ public class Quiz {
 
     @Temporal(TemporalType.DATE)
     private Date createDate;
+
+    @OneToMany(mappedBy = "quiz")
+    private List<Question> questions;
 
     public Long getId() {
         return id;
@@ -53,5 +58,13 @@ public class Quiz {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public List<Question> getQuestions() {
+        return this.questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
     }
 }

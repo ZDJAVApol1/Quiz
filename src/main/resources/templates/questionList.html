@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista quizów</title>
+</head>
+<body>
+    <h1 th:text="'Lista pytań do quizu ' + ${questionList.quizName}"></h1>
+    <table>
+        <tr th:each="question : ${questionList.questions}">
+            <td th:text="${question.id}" />
+            <td th:text="${question.text}" />
+        </tr>
+    </table>
+</body>
+
+</html>

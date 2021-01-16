@@ -23,4 +23,12 @@ public class QuizService {
         List<QuizDto> result = QuizMapper.mapEnitityListToDtoList(entities);
         return result;
     }
+
+    public QuizDto getQuizById(Long id) {
+
+        Quiz quiz = quizRepository.getById(id);
+        QuizDto dto = QuizMapper.mapEntityToDto(quiz);
+
+        return dto;
+    }
 }

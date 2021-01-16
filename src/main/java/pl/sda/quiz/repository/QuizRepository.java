@@ -8,4 +8,5 @@ import pl.sda.quiz.entity.Quiz;
 @Repository
 public interface QuizRepository extends CrudRepository<Quiz, Long> {
     
+    Quiz getById(Long id);
 }
