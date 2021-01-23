@@ -17,10 +17,9 @@
     </div>
 
     <div th:fragment="menu">
-        <ul>
-            <li>Element 1</li>
-            <li>Element 2</li>
-        </ul>
+        <div sec:authorize="isAuthenticated()">
+            Hello <p sec:authentication="name" />
+        </div>
     </div>
 </html>
 
