@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+
+    <head th:fragment="header (pageTitle)">
+        <meta charset="UTF-8">
+        <title th:text="${pageTitle}">TITLE</title>
+        <link href="css/main.css" th:href="@{/css/main.css}" rel="stylesheet">
+    </head>
+
+    <head th:fragment="header_for_quiz_list">
+
+    </head>
+
+    <div th:fragment="footer">
+        Ala ma kota
+    </div>
+
+    <div th:fragment="menu">
+        <ul>
+            <li>Element 1</li>
+            <li>Element 2</li>
+        </ul>
+    </div>
+</html>
+

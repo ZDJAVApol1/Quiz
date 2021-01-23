@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
         xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista quizów</title>
-</head>
+
+<head th:replace="fragments :: header (pageTitle = 'Lista pytań')"></head>
+
 <body>
+    <div th:replace="fragments :: menu"></div>
     <h1 th:text="'Lista pytań do quizu ' + ${questionList.quizName}"></h1>
     <table>
         <tr th:each="question : ${questionList.questions}">
@@ -13,6 +13,10 @@
             <td th:text="${question.text}" />
         </tr>
     </table>
+
+    <div th:replace="fragments :: footer"></div>
+
+    </div>
 </body>
 
 </html>
